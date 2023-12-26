@@ -9,7 +9,6 @@ export function Navbar() {
         height={100}
         alt="Bailey Health Logo"
       />
-      <h1 className="text-2xl">Bailey Health</h1>
     </div>
   )
 }
