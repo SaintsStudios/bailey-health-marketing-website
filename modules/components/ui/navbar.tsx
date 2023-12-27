@@ -77,10 +77,23 @@ function Navbar() {
       {width > Breakpoints.MD && width !== 0 && <DesktopMenu />}
       {width <= Breakpoints.MD && width !== 0 && (
         <div
-          className="ml-auto flex flex-row"
+          className={clsx(
+            'relative ml-auto h-16 w-16 cursor-pointer flex-row ',
+            'flex items-center justify-center'
+          )}
           onClick={() => setShowMobileMenu(!showMobileMenu)}
         >
-          <MenuIcon size={40} />
+          <div
+            className={clsx(
+              'absolute left-50% top-50% z-20 rounded-full bg-primary-400',
+              'transition-all duration-500 ease-in-out',
+              {
+                'h-16 w-16': showMobileMenu,
+                'h-0 w-0': !showMobileMenu,
+              }
+            )}
+          />
+          <MenuIcon size={40} className="z-30" />
         </div>
       )}
       <MobileMenu isOpen={showMobileMenu} />
