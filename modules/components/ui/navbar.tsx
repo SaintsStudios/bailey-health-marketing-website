@@ -43,7 +43,7 @@ function MobileMenu({ isOpen }: { isOpen?: boolean }) {
 
 function DesktopMenu() {
   return (
-    <div className="flex w-full items-center border border-black px-4">
+    <div className="flex w-full items-center px-4">
       <div className="flex flex-row">
         <h2 className={linkStyle}>Home</h2>
         <h2 className={linkStyle}>About Us</h2>
@@ -67,7 +67,7 @@ function Navbar() {
   const { width } = useScreenDimensions()
 
   return (
-    <div className="fixed relative flex w-full flex-row items-center p-8">
+    <div className="fixed z-50 flex w-full flex-row items-center p-8">
       <Image
         src={'/logos/logo.png'}
         width={200}
@@ -85,7 +85,7 @@ function Navbar() {
         >
           <div
             className={clsx(
-              'absolute left-50% top-50% z-20 rounded-full bg-primary-400',
+              'left-50% top-50% absolute z-20 rounded-full bg-primary-400',
               'transition-all duration-500 ease-in-out',
               {
                 'h-16 w-16': showMobileMenu,
