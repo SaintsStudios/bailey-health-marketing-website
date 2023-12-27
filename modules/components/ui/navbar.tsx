@@ -16,21 +16,27 @@ function MobileMenu({ isOpen }: { isOpen?: boolean }) {
   return (
     <div
       className={clsx(
-        'absolute left-0 top-36 flex h-80 w-full flex-col items-center justify-center border bg-white',
-        // {
-        //   isOpen: 'h-96',
-        // }
+        'absolute left-0 top-36 flex w-full flex-col items-center justify-center bg-white',
+        'transition-all duration-500 ease-in-out',
+        {
+          'h-0': !isOpen,
+          'h-96': isOpen,
+        }
       )}
     >
-      <h2>Home</h2>
-      <h2>About Us</h2>
-      <h2>Services</h2>
-      <Button
-        className="bg-primary-500 text-white"
-        onClick={() => console.log('clicked')}
-      >
-        Get Started
-      </Button>
+      {isOpen && (
+        <>
+          <h2>Home</h2>
+          <h2>About Us</h2>
+          <h2>Services</h2>
+          <Button
+            className="bg-primary-500 text-white"
+            onClick={() => console.log('clicked')}
+          >
+            Get Started
+          </Button>
+        </>
+      )}
     </div>
   )
 }
@@ -77,10 +83,7 @@ function Navbar() {
           <MenuIcon size={40} />
         </div>
       )}
-      {
-        // Mobile Menu
-        showMobileMenu && <MobileMenu isOpen={showMobileMenu} />
-      }
+      <MobileMenu isOpen={showMobileMenu} />
     </div>
   )
 }
