@@ -69,15 +69,24 @@ function Hero() {
             <div className="flex flex-row items-center justify-evenly">
               <RiInstagramFill
                 color="white"
-                className="rounded-full bg-gradient-to-b from-[#6228d7] via-[#ee2a7b] to-[#f9ce34] p-1 text-3xl"
+                className={clsx(
+                  'rounded-full bg-gradient-to-b from-[#6228d7] via-[#ee2a7b] to-[#f9ce34]',
+                  'cursor-pointer p-1 text-3xl transition-all duration-300 hover:scale-110'
+                )}
               />
               <RiFacebookBoxFill
                 color="white"
-                className="rounded-full bg-[#4267B2] p-1 text-3xl"
+                className={clsx(
+                  'rounded-full bg-[#4267B2] p-1 text-3xl',
+                  'cursor-pointer transition-all duration-300 hover:scale-110'
+                )}
               />
               <RiTwitterFill
                 color="white"
-                className="rounded-full bg-[#1DA1F2] p-1 text-2xl text-3xl"
+                className={clsx(
+                  'rounded-full bg-[#1DA1F2] p-1 text-2xl text-3xl',
+                  'cursor-pointer transition-all duration-300 hover:scale-110'
+                )}
               />
             </div>
           </div>
