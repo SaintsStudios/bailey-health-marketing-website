@@ -43,6 +43,7 @@ function Hero() {
           </Button>
           <Button
             className="bg-transparent text-black"
+            variant="secondary"
             onClick={() => console.log('clicked')}
           >
             Learn More
