@@ -67,7 +67,7 @@ function Navbar() {
   const { width } = useScreenDimensions()
 
   return (
-    <div className="fixed z-50 flex w-full flex-row items-center p-8">
+    <nav className="fixed z-50 flex w-full flex-row items-center p-8">
       <Image
         src={'/logos/logo.png'}
         width={200}
@@ -97,7 +97,7 @@ function Navbar() {
         </div>
       )}
       <MobileMenu isOpen={showMobileMenu} />
-    </div>
+    </nav>
   )
 }
 

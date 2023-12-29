@@ -22,7 +22,7 @@ function Hero() {
   return (
     <div
       className={clsx(
-        'absolute flex h-[100svh] w-full items-end justify-between'
+        'flex h-[100svh] w-full items-end justify-between'
       )}
     >
       <div className={clsx(contentContainer, 'items-start justify-center p-6')}>
