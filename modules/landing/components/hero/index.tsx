@@ -26,7 +26,7 @@ function Hero() {
       )}
     >
       <div className={clsx(contentContainer, 'items-start justify-center p-6')}>
-        <div className={clsx('flex flex-col items-start')}>
+        <div className={clsx('flex max-w-lg flex-col items-start')}>
           <h1 className={headerText}>Lorem ipsum dolor sit amet.</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
