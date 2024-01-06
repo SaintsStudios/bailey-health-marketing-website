@@ -51,6 +51,11 @@ const colors = {
   },
 }
 
+const fonts = {
+  headers: ['Montserrat', 'sans-serif'],
+  body: ['Cabin', 'sans-serif'],
+}
+
 const config: Config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -60,6 +65,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: colors,
+      fontFamily: fonts,
     },
   },
   plugins: [],

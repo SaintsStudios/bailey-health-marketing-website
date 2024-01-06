@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Cabin, Montserrat } from 'next/font/google'
 
 import Footer from '@/modules/components/ui/footer'
 import Navbar from '@/modules/components/ui/navbar'
 
 import '@/styles/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const mont = Montserrat({ subsets: ['latin'] })
+const cabin = Cabin({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Bailey Health',
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <body className={inter.className}>
+      <body className={(mont.className, cabin.className)}>
         <Navbar />
         {children}
         <Footer />
