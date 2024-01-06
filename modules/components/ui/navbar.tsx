@@ -67,13 +67,13 @@ function Navbar() {
   const { width } = useScreenDimensions()
 
   return (
-    <nav className="fixed z-50 flex w-full flex-row items-center p-8">
-      <Image
-        src={'/logos/logo.png'}
-        width={200}
-        height={50}
-        alt="Bailey Health Logo"
-      />
+    <nav
+      className={clsx(
+        'fixed z-50 flex w-full flex-row items-center px-4 py-2',
+        'bg-white shadow-md'
+      )}
+    >
+       
       {width > Breakpoints.MD && width !== 0 && <DesktopMenu />}
       {width <= Breakpoints.MD && width !== 0 && (
         <div

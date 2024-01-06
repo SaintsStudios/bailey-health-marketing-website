@@ -1,14 +1,49 @@
 import clsx from 'clsx'
 import Image from 'next/image'
-
-import useScreenDimensions from '@/hooks/useDimensions'
-import { Breakpoints } from '@/lib/constants'
-import Button from '@/modules/components/common/button'
 import {
   RiFacebookBoxFill,
   RiInstagramFill,
   RiTwitterFill,
 } from 'react-icons/ri'
+
+import useScreenDimensions from '@/hooks/useDimensions'
+import { Breakpoints } from '@/lib/constants'
+import Button from '@/modules/components/common/button'
+
+function InfoCard() {
+  return (
+    <div className="absolute left-10 top-10 h-40 w-80 rounded-sm bg-secondary-200/80 px-4 py-6">
+      <h2 className="text-lg font-bold">Have Questions?</h2>
+      <h1 className="text-xl font-bold">Call Us {'(000) 123-1234'}</h1>
+
+      <div className="my-4 h-0.5 w-full rounded-lg bg-secondary-100" />
+
+      <div className="flex flex-row items-center justify-evenly">
+        <RiInstagramFill
+          color="white"
+          className={clsx(
+            'rounded-full bg-gradient-to-b from-[#6228d7] via-[#ee2a7b] to-[#f9ce34]',
+            'cursor-pointer p-1 text-3xl transition-all duration-300 hover:scale-110'
+          )}
+        />
+        <RiFacebookBoxFill
+          color="white"
+          className={clsx(
+            'rounded-full bg-[#4267B2] p-1 text-3xl',
+            'cursor-pointer transition-all duration-300 hover:scale-110'
+          )}
+        />
+        <RiTwitterFill
+          color="white"
+          className={clsx(
+            'rounded-full bg-[#1DA1F2] p-1 text-2xl text-3xl',
+            'cursor-pointer transition-all duration-300 hover:scale-110'
+          )}
+        />
+      </div>
+    </div>
+  )
+}
 
 function Hero() {
   const { width } = useScreenDimensions()
@@ -20,11 +55,7 @@ function Hero() {
   const headerText = 'text-4xl font-bold my-4'
 
   return (
-    <div
-      className={clsx(
-        'flex h-[100svh] w-full items-end justify-between'
-      )}
-    >
+    <div className={clsx('flex h-[100svh] w-full items-end justify-between')}>
       <div className={clsx(contentContainer, 'items-start justify-center p-6')}>
         <div className={clsx('flex max-w-lg flex-col items-start')}>
           <h1 className={headerText}>Lorem ipsum dolor sit amet.</h1>
@@ -49,6 +80,8 @@ function Hero() {
             Learn More
           </Button>
         </div>
+
+        {/* {width < Breakpoints.LG && <InfoCard />} */}
       </div>
 
       {width > Breakpoints.MD && (
@@ -61,36 +94,7 @@ function Hero() {
             className="h-auto"
           />
 
-          <div className="absolute left-10 top-10 h-40 w-80 rounded-sm bg-secondary-200/80 px-4 py-6">
-            <h2 className="text-lg font-bold">Have Questions?</h2>
-            <h1 className="text-xl font-bold">Call Us {'(000) 123-1234'}</h1>
-
-            <div className="my-4 h-0.5 w-full rounded-lg bg-secondary-100" />
-
-            <div className="flex flex-row items-center justify-evenly">
-              <RiInstagramFill
-                color="white"
-                className={clsx(
-                  'rounded-full bg-gradient-to-b from-[#6228d7] via-[#ee2a7b] to-[#f9ce34]',
-                  'cursor-pointer p-1 text-3xl transition-all duration-300 hover:scale-110'
-                )}
-              />
-              <RiFacebookBoxFill
-                color="white"
-                className={clsx(
-                  'rounded-full bg-[#4267B2] p-1 text-3xl',
-                  'cursor-pointer transition-all duration-300 hover:scale-110'
-                )}
-              />
-              <RiTwitterFill
-                color="white"
-                className={clsx(
-                  'rounded-full bg-[#1DA1F2] p-1 text-2xl text-3xl',
-                  'cursor-pointer transition-all duration-300 hover:scale-110'
-                )}
-              />
-            </div>
-          </div>
+          <InfoCard />
         </div>
       )}
     </div>
