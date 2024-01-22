@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { HashRouter, Routes, Route, Outlet } from "react-router-dom";
 
 // Elements
 import BackToTop from './elements/back-top';
@@ -31,7 +31,7 @@ class Markup extends Component{
 			<>	
 			
 				{/* {<BrowserRouter basename={'/react/'}> */}
-				<BrowserRouter>
+				<HashRouter>
 					
 					<Routes>
 						
@@ -57,7 +57,7 @@ class Markup extends Component{
 					
 					<PageScrollTop />
 					
-				</BrowserRouter>
+				</HashRouter>
 				
 				<BackToTop />
 				
